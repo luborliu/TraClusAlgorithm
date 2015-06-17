@@ -64,12 +64,7 @@ public class Cluster {
 	}
 	
 	public boolean writeCluster(OutputStream outfile) {
-		
-		//////一会儿再改！！！！outfile.write();
-		
-		
-		
-		
+						
 		return true;
 		
 	}
