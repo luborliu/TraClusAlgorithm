@@ -3,10 +3,8 @@ package boliu;
 
 import boliu.TraClusterDoc.Parameter;
 
-public class TestMain {
+public class Main {
 		
-	
-	
 
 	public static void main(String[] args) {
 		
@@ -16,9 +14,6 @@ public class TestMain {
 			
 			tcd.onOpenDocument(args[0]);
 			tcd.onClusterGenerate(args[1], Integer.parseInt(args[2]), Integer.parseInt(args[3]));//25,5~7
-			
-			
-			
 			
 		} else if(args.length==2) {
 			

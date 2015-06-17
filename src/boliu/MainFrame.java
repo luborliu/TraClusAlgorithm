@@ -13,8 +13,8 @@ public class MainFrame extends JFrame {
 	}
 	public MainFrame(ArrayList<Trajectory> trajectoryAL, ArrayList<Cluster> clusterRepresentativeTrajectoryAL) {
 	
-		initWindow();//把子窗口和按钮NEW出来 
-		showWindow();//设窗口大小，显示，关闭
+		initWindow();
+		showWindow();
 		
 		Graphics g = p.getGraphics();
 		g.setColor(Color.GREEN);
@@ -66,7 +66,6 @@ public class MainFrame extends JFrame {
 		
 		this.setBounds(200, 200, 1200, 900);
 		this.setContentPane(p);
-		//this.setSize(1600, 1600);
 		this.setTitle("TraClusAlgorithm ---- By Bo Liu");
 		this.setVisible(true);
 		this.setResizable(true);

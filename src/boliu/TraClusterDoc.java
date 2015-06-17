@@ -47,8 +47,6 @@ public class TraClusterDoc {
 		int nPoints;
 		double value;
 		
-		//char buffer[1024000];
-		//char tmp_buf1[1024], tmp_buf2[1024];
 
 		DataInputStream in;
 		BufferedReader inBuffer = null;

@@ -40,9 +40,7 @@ public class ClusterGen {
 	//used for InsertClusterPoint() and ReplaceClusterPoint() 
 	enum PointLocation {
 		HEAD , TAIL		
-	}
-	//////////////??????????????????
-	
+	}	
 	
 	class LineSegmentId{
 		
@@ -166,8 +164,7 @@ public class ClusterGen {
 				endPoint = pTrajectory.getM_partitionPointArray().get(j+1);
 				
 				if(measureDistanceFromPointToPoint(startPoint, endPoint) <MIN_LINESEGMENT_LENGTH)
-					continue; //停止当前的循环 进行下一次循环
-				
+					continue;
 				m_nTotalLineSegments++;
 				
 				CMDPoint lineSegmentPoint = new CMDPoint(nDimensions * 2);
@@ -430,11 +427,9 @@ public class ClusterGen {
 			return false;
 		} else {
 			for(int i=0; i<seeds.size(); i++) {
-				//m_componentIdArray.set(i,componentId);	//此处有修正不知对否
 				m_componentIdArray.set((Integer)(seeds.toArray()[i]), componentId);
 			}
-			seeds.remove(index);			//可能会出错
-			
+			seeds.remove(index);						
 			while(!seeds.isEmpty()) {
 				currIndex = (Integer)seeds.toArray()[0];				
 				extractStartAndEndPoints(currIndex, m_startPoint1, m_endPoint1);
@@ -473,7 +468,7 @@ public class ClusterGen {
 		for (int i = 0; i < m_currComponentId; i++)
 		{	
 			m_lineSegmentClusters[i] = new LineSegmentCluster();
-			m_lineSegmentClusters[i].avgDirectionVector = new CMDPoint();//此为我加上的
+			m_lineSegmentClusters[i].avgDirectionVector = new CMDPoint();
 			
 			
 			m_lineSegmentClusters[i].lineSegmentClusterId = i;
@@ -533,8 +528,7 @@ public class ClusterGen {
 			clusterEntry.cosTheta = cosTheta;
 			clusterEntry.sinTheta = sinTheta;
 			
-			//m_lineSegmentClusters[i] = clusterEntry;		//此处需留神，后加的，指针引用问题
-		}
+					}
 		// ... END
 
 		// summarize the information about line segment clusters
@@ -547,7 +541,6 @@ public class ClusterGen {
 		
 		Set<Integer> trajectories = new HashSet<Integer>();
 		for(int i=0; i<m_currComponentId; i++) {
-			//在这进行了修改 不使用clusterEntry 直接用m_lineSegmentCluster[i] 因为源代码是指向地址的&m_lineSeg....[i]
 			LineSegmentCluster clusterEntry = (m_lineSegmentClusters[i]);
 
 			// a line segment cluster must have trajectories more than the minimum threshold
@@ -642,7 +635,7 @@ public class ClusterGen {
 				//	if ((Integer)(insertionList.toArray()[iter2]) == (Integer)(deletionList.toArray()[iter3])) {
 					if(a==b) {
 						lineSegments.remove((Integer)(deletionList.toArray()[iter3]));
-						deletionList.remove((Integer)(deletionList.toArray()[iter3]));		// now deleted //竟然在这晕了这样应该是对的
+						deletionList.remove((Integer)(deletionList.toArray()[iter3]));		// now deleted //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 						break;
 					}
 				}
@@ -877,7 +870,6 @@ public class ClusterGen {
 				// store the clusters finally identified
 				// START ...
 				Cluster pClusterItem = new Cluster(currClusterId, m_document.m_nDimensions); 
-				//此处有逻辑修正
 
 				for (int j = 0; j < m_lineSegmentClusters[i].nClusterPoints; j++) {
 					pClusterItem.addPointToArray(m_lineSegmentClusters[i].clusterPointArray.get(j));
@@ -973,7 +965,6 @@ public class ClusterGen {
 		
 	}
 
-	//此处要改 double int这块 不改变的
 	public boolean estimateParameterValue(Parameter p) {
 		
 		double entropy, minEntropy = (double)INT_MAX;
@@ -1005,13 +996,10 @@ public class ClusterGen {
 				minTotalSize = totalSize;
 				minEps = eps;
 			}
-			//fprintf(stdout, ".");	fflush(stdout);
 		}	
 		//setup output arguments
 		p.epsParam = minEps;
 		p.minLnsParam = (int)Math.ceil((double)minTotalSize/(double)m_nTotalLineSegments);
-		//fprintf(stdout)
-		///////////////////////////////不要忘记改这里
 		
 		//System.out.println("\nepsParam:"+p.epsParam+"  minLnsParam:"+p.minLnsParam);//26 and 5 look whether you need to add an range
 		return true;		
