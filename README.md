@@ -21,12 +21,15 @@ After downloading it to local,
     javac *.java
 3. cd to the folder of src/
 4. execute the program using the following either commands:
+
     1) java boliu.Main inputfile outputfile eps minLns 
         --e.g. java boliu.Main deer_1995.tra testOut.txt
         In this way, the program will help you to decide the parameters for eps and minLns;
+
     2) java boliu.Main inputfile outputfile 
         --e.g. java boliu.Main deer_1995.tra testOut.txt 29 8
         In this way, you tell the program the parameters for eps and minLns, which are 29 and 8 seperately.
+
 5. wating for the result :)
 
 
