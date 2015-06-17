@@ -16,10 +16,15 @@ which is proposed during my thesis study and I will put it into the github later
 How to run the code?
 
 After downloading it to local, 
+
 1. cd to the folder of src/boliu/
+
 2. compile all the .java files using:
+
     javac *.java
+
 3. cd to the folder of src/
+
 4. execute the program using the following either commands:
 
     1) java boliu.Main inputfile outputfile eps minLns 
