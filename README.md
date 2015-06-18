@@ -39,7 +39,7 @@ After downloading it to local,
         
         In this way, you tell the program the parameters for eps and minLns, which are 29 and 8 seperately.
 
-5. wating for the result :)
+5. waiting for the result :)
 
 
 # Reference
