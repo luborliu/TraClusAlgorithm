@@ -13,7 +13,7 @@ which is proposed during my thesis study and I will put it into the github later
 
 
 
-How to run the code?
+# How to run the code?
 
 After downloading it to local, 
 
@@ -38,7 +38,7 @@ After downloading it to local,
 5. wating for the result :)
 
 
-
+# Reference
 
 
 [1] Lee, Jae-Gil, Jiawei Han, and Kyu-Young Whang. "Trajectory clustering: a partition-and-group framework."
