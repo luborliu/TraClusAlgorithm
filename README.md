@@ -1,6 +1,6 @@
-# TraClusAlgorithm
+# TraClus Algorithm
 
-This is an implementation of TraClus [1] algorithm in Java. A GUI was added for the convenience.
+This is an implementation of TraClus (TRAjectory CLUStering) [1] algorithm in Java. A GUI was added for the convenience.
 
 The original paper of this algorithm can be found at http://hanj.cs.illinois.edu/pdf/sigmod07_jglee.pdf 
 The authors of the paper implemented the algorithm in C++, so it could be helpful to develop one in Java for 
@@ -25,7 +25,7 @@ After downloading it to local,
 
 3. cd to the folder of src/
 
-4. execute the program using the following either commands:
+4. execute the program using the following either command:
 
     1) java boliu.Main inputfile outputfile eps minLns 
     
