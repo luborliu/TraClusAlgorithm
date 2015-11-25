@@ -51,3 +51,12 @@ After downloading it to local,
 Proceedings of the 2007 ACM SIGMOD international conference on Management of data. ACM, 2007.
 
 
+# Realse Note
+
+Nov.25th 2015   fix a bug that makes the program not work for multi-dimensional (>2) data set.
+
+
+
+
+
+
