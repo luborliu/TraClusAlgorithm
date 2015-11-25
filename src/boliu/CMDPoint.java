@@ -6,12 +6,11 @@ public class CMDPoint {
 	private int m_nDimensions; 	// the number of dimensions of a point
 	double[] m_coordinate;	    // the coordinate of a point
 	
-	public CMDPoint() {	
-		
+	//default constructor which shall be never used, we can use the following constructor instead
+	public CMDPoint() {		
 		m_nDimensions = 2;
 		m_coordinate = new double[m_nDimensions];
 		m_coordinate[0] = m_coordinate[1] = 0.0;
-	
 	}
 	
 	public CMDPoint(int nDimensions) {

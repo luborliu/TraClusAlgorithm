@@ -20,9 +20,9 @@ public class ClusterGen {
 	private LineSegmentCluster[] m_lineSegmentClusters;
 	// programming trick: avoid frequent execution of the new and delete operations
 	private CMDPoint m_startPoint1, m_endPoint1, m_startPoint2, m_endPoint2;
-	private CMDPoint m_vector1 = new CMDPoint();
-	private CMDPoint m_vector2 = new CMDPoint();;
-	private CMDPoint m_projectionPoint = new CMDPoint();;
+	private CMDPoint m_vector1 ;// = new CMDPoint(m_document.m_nDimensions);
+	private CMDPoint m_vector2 ;//= new CMDPoint(m_document.m_nDimensions);;
+	private CMDPoint m_projectionPoint ;// = new CMDPoint( m_document.m_nDimensions);;
 	double m_coefficient;
 	
 	private ArrayList<LineSegmentId> m_idArray = new ArrayList<ClusterGen.LineSegmentId>();
@@ -72,18 +72,24 @@ public class ClusterGen {
 		
 		
 	}
-		
+	//this default constructor should be never used	
 	public ClusterGen() {
 		
 	}
+	//use the following structor instead
 	public ClusterGen(TraClusterDoc document) {
-		
-		m_startPoint1 = new CMDPoint();
-		m_startPoint2 = new CMDPoint();
-		m_endPoint1 = new CMDPoint();
-		m_endPoint2 = new CMDPoint();
-		
 		m_document = document;
+		
+		m_startPoint1 = new CMDPoint(m_document.m_nDimensions);
+		m_startPoint2 = new CMDPoint(m_document.m_nDimensions);
+		m_endPoint1 = new CMDPoint(m_document.m_nDimensions);
+		m_endPoint2 = new CMDPoint(m_document.m_nDimensions);
+		
+		m_vector1 = new CMDPoint(m_document.m_nDimensions);
+		m_vector2 = new CMDPoint(m_document.m_nDimensions);
+		m_projectionPoint = new CMDPoint( m_document.m_nDimensions);
+
+		
 		m_idArray.clear();
 		m_lineSegmentPointArray.clear();
 		
@@ -113,7 +119,7 @@ public class ClusterGen {
 			m_document.m_trajectoryList.set(i, pTrajectory);
 		}
 		
-		if(!storeClusterComponentIntoIndex()) {	//jiancha
+		if(!storeClusterComponentIntoIndex()) {	
 			return false;
 		}
 		
@@ -468,7 +474,7 @@ public class ClusterGen {
 		for (int i = 0; i < m_currComponentId; i++)
 		{	
 			m_lineSegmentClusters[i] = new LineSegmentCluster();
-			m_lineSegmentClusters[i].avgDirectionVector = new CMDPoint();
+			m_lineSegmentClusters[i].avgDirectionVector = new CMDPoint(nDimensions);
 			
 			
 			m_lineSegmentClusters[i].lineSegmentClusterId = i;
