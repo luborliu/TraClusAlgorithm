@@ -53,7 +53,7 @@ Proceedings of the 2007 ACM SIGMOD international conference on Management of dat
 
 # Realse Note
 
-Nov.25th 2015   fix a bug that makes the program not work for multi-dimensional (>2) data set.
+11/25/2015   fix a bug that makes the program not work for multi-dimensional (>2) data set.
 
 
 
