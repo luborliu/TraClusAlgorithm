@@ -2,9 +2,6 @@ package boliu;
 
 import boliu.TraClusterDoc.Parameter;
 
-
-
-
 public class Main {
 		
 
