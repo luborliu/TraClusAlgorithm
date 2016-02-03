@@ -17,13 +17,13 @@ public class Main {
 		} else if(args.length==2) {
 			
 			TraClusterDoc tcd = new TraClusterDoc();
+			tcd.onOpenDocument(args[0]);
 			
 			Parameter p = tcd.onEstimateParameter();
 			if(p != null) {				
 				System.out.println("Based on the algorithm, the suggested parameters are:\n"+"eps:"+p.epsParam+"  minLns:"+p.minLnsParam);
 			} 
 			
-			tcd.onOpenDocument(args[0]);
 			tcd.onClusterGenerate(args[1], p.epsParam, p.minLnsParam);									
 		} else {
 			System.out.println("Please give me 2 or 4 input parameters! \n "
