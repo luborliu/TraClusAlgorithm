@@ -45,6 +45,25 @@ After downloading it to local,
 6. Star it if it helps  \*-\*
 
 
+# Input file format
+
+
+The data format is as follows:
+
+    1st line: Number of dimensions (2 for example)
+
+    2nd line: Number of trajectories (32 for example)
+
+    3rd line:  Trajectory Index (starting from 0, so 0 for this line), Number of trajectory points in this trajectory (n for example), X1, Y1, X2, Y2, …., Xn, Yn
+
+    4th line:  Trajectory Index (starting from 0, so 1 for this line), Number of trajectory points in this trajectory (m for example), X1, Y1, X2, Y2, …., Xm, Ym
+    .
+    .
+    .
+    34th line: Trajectory Index (starting from 0, so 31 for this line), Number of trajectory points in this trajectory (j for example), X1, Y1, X2, Y2, …., Xj, Yj
+
+
+
 # Reference
 
 
