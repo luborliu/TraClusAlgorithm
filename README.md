@@ -29,13 +29,13 @@ After downloading it to local,
 
 4. execute the program using the following either command:
 
-    1) java boliu.Main inputfile outputfile eps minLns 
+    1) java boliu.Main inputfile outputfile 
     
         --e.g. java boliu.Main deer_1995.tra testOut.txt
         
         In this way, the program will help you to decide the parameters for eps and minLns;
 
-    2) java boliu.Main inputfile outputfile 
+    2) java boliu.Main inputfile outputfile eps minLns 
     
         --e.g. java boliu.Main deer_1995.tra testOut.txt 29 8
         
