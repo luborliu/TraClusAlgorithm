@@ -73,8 +73,12 @@ Proceedings of the 2007 ACM SIGMOD international conference on Management of dat
 
 # Realse Note
 
-02/02/2016   fix a bug (reported by Dieter) of estimation function (cannot give right output according to different input files) 
+03/10/2016   fix a bug (reported by @luca-zamboni) that will throw InputMismatchException while the code is downloaded in some      countries.
+
+02/02/2016   fix a bug (reported by Dieter) of estimation function (cannot give right output according to different input files). 
+
 11/25/2015   fix a bug (reported by @ankushdas) that makes the program not work for multi-dimensional (>2) data set.
+
 
 
 
