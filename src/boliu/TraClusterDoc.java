@@ -73,6 +73,7 @@ public class TraClusterDoc {
 				String str = inBuffer.readLine();
 				
 				Scanner sc = new Scanner(str); 
+				sc.useLocale(Locale.US);
 				
 				trajectoryId = sc.nextInt();		//trajectoryID
 				nPoints = sc.nextInt();				//nubmer of points in the trajectory
