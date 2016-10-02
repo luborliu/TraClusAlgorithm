@@ -39,7 +39,7 @@ After downloading it to local,
     
         --e.g. java boliu.Main deer_1995.tra testOut.txt 29 8
         
-        In this way, you tell the program the parameters for eps and minLns, which are 29 and 8 seperately.
+        In this way, you tell the program the parameters for eps and minLns, which are 29 and 8 separately.
 
 5. waiting for the result :) 
 6. Star it if it helps  \*-\*
