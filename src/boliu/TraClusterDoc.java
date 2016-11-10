@@ -22,6 +22,7 @@ public class TraClusterDoc {
 	public int m_nClusters;
 	public double m_clusterRatio;
 	public int m_maxNPoints;
+	public ArrayList<ArrayList<Integer>> array_related_trajectories;
 	public ArrayList<Trajectory> m_trajectoryList;
 	public ArrayList<Cluster> m_clusterList;
 	
@@ -32,6 +33,8 @@ public class TraClusterDoc {
 		m_clusterRatio = 0.0;	
 		m_trajectoryList = new ArrayList<Trajectory>();
 		m_clusterList = new ArrayList<Cluster>();
+		ClusterGen abc = new ClusterGen();
+
 	}
 	
 	public class Parameter {
@@ -192,7 +195,20 @@ public class TraClusterDoc {
 					bw.write(x+" "+y+"   ");
 				}
 				//System.out.println();
-			}						
+			}
+			
+			for(int i=0; i<array_related_trajectories.size(); i++)
+			{
+				bw.write("\nclusterID: "+ m_clusterList.get(i).getM_clusterId()+"\n");
+				System.out.print("\nclusterID: "+ m_clusterList.get(i).getM_clusterId()+"\n");
+				for(int j=0; j<array_related_trajectories.get(i).size(); j++)
+				{
+					bw.write(array_related_trajectories.get(i).get(j) + " ");
+					System.out.print(array_related_trajectories.get(i).get(j) + " ");	
+
+				}
+
+			}		
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -27,8 +27,11 @@ public class ClusterGen {
 	
 	private ArrayList<LineSegmentId> m_idArray = new ArrayList<ClusterGen.LineSegmentId>();
 	private ArrayList<CMDPoint> m_lineSegmentPointArray = new ArrayList<CMDPoint>();
-	
-	
+
+	// this variable is to return the clustered tracks' id
+	public ArrayList<ArrayList<Integer>> array_of_related_trajectories = new ArrayList<ArrayList<Integer>>();
+
+
 	//used for performing the DBSCAN algorithm
 	public static final int UNCLASSIFIED = -2;
 	public static final int NOISE = -1;
@@ -88,7 +91,6 @@ public class ClusterGen {
 		m_vector1 = new CMDPoint(m_document.m_nDimensions);
 		m_vector2 = new CMDPoint(m_document.m_nDimensions);
 		m_projectionPoint = new CMDPoint( m_document.m_nDimensions);
-
 		
 		m_idArray.clear();
 		m_lineSegmentPointArray.clear();
@@ -196,7 +198,7 @@ public class ClusterGen {
 		
 		int nPoints = pTrajectory.getM_nPoints();
 		int startIndex = 0, length;
-		int fullPartitionMDLCost, partialPartitionMDLCost;
+		int fullPartitionMDLCost, partialPartitionMDLCost;  
 		
 		//add the start point of a trajectory
 		CMDPoint startP = pTrajectory.getM_pointArray().get(0);
@@ -546,6 +548,9 @@ public class ClusterGen {
 		}
 		
 		Set<Integer> trajectories = new HashSet<Integer>();
+		
+
+
 		for(int i=0; i<m_currComponentId; i++) {
 			LineSegmentCluster clusterEntry = (m_lineSegmentClusters[i]);
 
@@ -558,6 +563,7 @@ public class ClusterGen {
 				// DEBUG: count the number of trajectories that belong to clusters
 				for (int j = 0; j < (int)clusterEntry.trajectoryIdList.size(); j++)
 					trajectories.add(clusterEntry.trajectoryIdList.get(j));
+					array_of_related_trajectories.add(clusterEntry.trajectoryIdList);
 				//for(int j =0; j<((int)(m_lineSegmentClusters[i].trajectoryIdList.size())); j++) 
 				//	trajectories.add(m_lineSegmentClusters[i].trajectoryIdList.get(j));
 				
@@ -581,7 +587,7 @@ public class ClusterGen {
 		}
 		// DEBUG: compute the ratio of trajectories that belong to clusters
 		m_document.m_clusterRatio = (double)trajectories.size() / (double)m_document.m_nTrajectories;
-
+		m_document.array_related_trajectories = array_of_related_trajectories;
 		return true;	
 	}
 	
@@ -824,7 +830,6 @@ public class ClusterGen {
 		// ... END
 		
 		int  trajectoryId = m_idArray.get(lineSegmentId).trajectoryId;
-
 		// store the identifier of the trajectories that belong to this line segment cluster
 		if(!clusterEntry.trajectoryIdList.contains(trajectoryId))
 		//if (std::find(clusterEntry.trajectoryIdList.begin(), clusterEntry->trajectoryIdList.end(), trajectoryId) == clusterEntry.trajectoryIdList.end())
