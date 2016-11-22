@@ -12,7 +12,6 @@ public class Cluster {
 	private ArrayList<CMDPoint> m_pointArray;	// the array of the cluster points
 
 	public Cluster() {	
-		
 		m_clusterId = -1;
 		m_nDimensions = 2;
 		m_nTrajectories = 0;
@@ -21,7 +20,6 @@ public class Cluster {
 	}
 	
 	public Cluster(int id, int nDimensions) {		
-		
 		m_clusterId = id;
 		m_nDimensions = nDimensions;
 		m_nTrajectories = 0;
@@ -53,7 +51,6 @@ public class Cluster {
 	}
 	
 	public void addPointToArray(CMDPoint point) {
-		
 		m_pointArray.add(point);
 		m_nPoints++;				
 	}
@@ -62,10 +59,8 @@ public class Cluster {
 		return this.m_pointArray;
 	}
 	
-	public boolean writeCluster(OutputStream outfile) {
-						
-		return true;
-		
+	public boolean writeCluster(OutputStream outfile) {	
+		return true;	
 	}
 	
 	

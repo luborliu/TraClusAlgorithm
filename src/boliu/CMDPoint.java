@@ -14,13 +14,11 @@ public class CMDPoint {
 	}
 	
 	public CMDPoint(int nDimensions) {
-		
 		m_nDimensions = nDimensions;
 		m_coordinate = new double[m_nDimensions];
 		for( int i=0; i < m_nDimensions; i++ ) {
 			m_coordinate[i] = 0.0;
 		}
-		
 	}
 	
 	/**

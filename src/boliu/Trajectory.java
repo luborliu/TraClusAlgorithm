@@ -4,16 +4,15 @@ import java.util.ArrayList;
 
 public class Trajectory {	
 	
-	private int m_trajectoryId;		// the identifier of this trajectory
-	private int m_nDimensions;		// the dimensionality of this trajectory
-	private int m_nPoints;			// the number of points constituting a trajectory 
-	private ArrayList<CMDPoint> m_pointArray;	// the array of the trajectory points
-	private int m_nPartitionPoints;		// the number of partition points in a trajectory
-	private ArrayList<CMDPoint> m_partitionPointArray;	// the array of the partition points
+	private int m_trajectoryId;	// the identifier of this trajectory
+	private int m_nDimensions; // the dimensionality of this trajectory
+	private int m_nPoints; // the number of points constituting a trajectory 
+	private ArrayList<CMDPoint> m_pointArray; // the array of the trajectory points
+	private int m_nPartitionPoints; // the number of partition points in a trajectory
+	private ArrayList<CMDPoint> m_partitionPointArray; // the array of the partition points
 	
 	
-	public Trajectory() {
-		
+	public Trajectory() {	
 		m_trajectoryId = -1;
 		m_nDimensions = 2;
 		m_nPoints = 0;
@@ -24,7 +23,6 @@ public class Trajectory {
 	}
 	
 	public Trajectory(int id, int nDimensions) {
-	
 		m_trajectoryId = id;
 		m_nDimensions = nDimensions;
 		m_nPoints = 0;
@@ -32,19 +30,15 @@ public class Trajectory {
 		m_pointArray = new ArrayList<CMDPoint>();
 		m_partitionPointArray = new ArrayList<CMDPoint>();
 	}
-//two methods	
+	//two methods	
 	public void addPointToArray(CMDPoint point) {
-		
 		m_pointArray.add(point);
 		m_nPoints++;
-		
 	}
 	
 	public void addPartitionPointToArray(CMDPoint point) {
-		
 		m_partitionPointArray.add(point);		
 		m_nPartitionPoints++;
-		
 	}
 	
 	public void setM_trajectoryId(int id) {
